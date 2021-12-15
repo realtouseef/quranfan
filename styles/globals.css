@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "Uthmanic";
+  src: local("Uthmanic"), url(../public/font/uthmanic.woff2) format("woff2");
+}
+
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-base: #ec4899;
+    --color-text-secondary: #f472b6;
+    --color-text-heading: #23272a;
+    --color-text-muted: #09090999;
+    --color-light-pink: #fdf2f8;
+    --color-pink-secondary: #fbcfe8;
+    --color-fill: #fce7f3;
+    --color-fill-hover: #fbcfe8;
+    --color-gradient-first: #e7bdfb;
+    --color-gradient-mid: #fad0da;
+    --color-gradient-last: #a8c6f3;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
