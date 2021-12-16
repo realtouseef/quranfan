@@ -7,7 +7,6 @@ const Navbar = () => {
         <div className="py-10 text-center font-mulish text-xl">
           <Link href="/" passHref>
             <div className="cursor-pointer font-black text-skin-secondary hover:text-skin-base ">
-              <i aria-hidden="true" className="fas fa-star-half"></i>
               quranfan
             </div>
           </Link>

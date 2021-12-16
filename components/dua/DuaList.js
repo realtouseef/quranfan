@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Prayers } from "./Prayers"
 import DuaLayout from "./DuaLayout"
+// import Image from "next/image"
 
 const DuaList = () => {
   const [prayer, setPrayer] = useState()
@@ -13,6 +14,22 @@ const DuaList = () => {
 
   return (
     <>
+      <style jsx>
+        {`
+          .custom-arrow::before {
+            content: "";
+            position: absolute;
+            widhth: 0;
+            height: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-left: 0.7em solid transparent;
+            border-right: 0.7em solid transparent;
+            border-top: 0.7em solid rgb(236 72 153);
+          }
+        `}
+      </style>
       <DuaLayout>
         <main className="lg:py-24 lg:pl-10 lg:pr-1 lg:flex lg:justify-between">
           {/* heading */}
@@ -33,9 +50,8 @@ const DuaList = () => {
 
             {/* normal dropdown  */}
             <div className="relative">
-              <i className="fas fa-caret-down text-4xl absolute top-2 right-3 fill-current text-transparent bg-clip-text bg-gradient-to-r from-skin-first via-skin-mid to-skin-last pointer-events-none"></i>
               <select
-                className="dropdown w-full pl-4 pr-10 py-3 text-xl font-lato font-normal bg-white text-skin-heading border-2 rounded-md outline-none appearance-none shadow-none cursor-pointer"
+                className="dropdown w-full h-14 pl-4 pr-10 py-3 text-xl font-lato font-normal bg-white text-skin-heading rounded-md outline-none appearance-none shadow-none cursor-pointer"
                 onChange={handleChange}
               >
                 <option value="null">Select Emotion</option>
@@ -75,6 +91,7 @@ const DuaList = () => {
                 <option value="Unhappy">Unhappy</option>
                 <option value="Wishing-friend">Wishing for a friend</option>
               </select>
+              <div className="custom-arrow absolute top-0 right-0 h-full w-16 bg-fuchsia-400 pointer-events-none rounded-r-md"></div>
             </div>
           </header>
           {/* ------------------------------------------------
