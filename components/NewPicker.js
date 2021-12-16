@@ -10,7 +10,7 @@ const NewPicker = () => {
   const randomNumberGenerator = Math.floor(Math.random() * 6236) + 1 // excluding bismillah
 
   const arabicURL = `https://api.alquran.cloud/v1/ayah/${randomNumberGenerator}`
-  const englishURL = `http://api.alquran.cloud/v1/ayah/${randomNumberGenerator}/en.sahih`
+  const englishURL = `https://api.alquran.cloud/v1/ayah/${randomNumberGenerator}/en.sahih`
 
   const fetchAndGenerateVerse = () => {
     axios.all([axios.get(arabicURL), axios.get(englishURL)]).then(

@@ -18,7 +18,7 @@ const Search = () => {
       try {
         setIsLoading(true)
         const response = await fetch(
-          `http://api.alquran.cloud/v1/search/${searchedWord}/all/en`
+          `https://api.alquran.cloud/v1/search/${searchedWord}/all/en`
         )
         const json = await response.json()
         setResults(
