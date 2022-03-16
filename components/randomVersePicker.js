@@ -33,7 +33,7 @@ const NewPicker = () => {
           setEnglishTranslation(englishURL.data.data);
       })
     );
-  }, [arabicURL, englishURL]);
+  }, []);
 
   return (
     <>
