@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import axios from "axios"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import axios from "axios";
 
 const NewPicker = () => {
-  const [storingSurahArabic, setStoringSurahArabic] = useState([""])
-  const [storingAyahArabic, setStoringAyahArabic] = useState([""])
-  const [storingEnglishTranslation, setEnglishTranslation] = useState([""])
+  const [storingSurahArabic, setStoringSurahArabic] = useState([""]);
+  const [storingAyahArabic, setStoringAyahArabic] = useState([""]);
+  const [storingEnglishTranslation, setEnglishTranslation] = useState([""]);
 
-  const randomNumberGenerator = Math.floor(Math.random() * 6236) + 1 // excluding bismillah
+  const randomNumberGenerator = Math.floor(Math.random() * 6236) + 1; // excluding bismillah
 
-  const arabicURL = `https://api.alquran.cloud/v1/ayah/${randomNumberGenerator}`
-  const englishURL = `https://api.alquran.cloud/v1/ayah/${randomNumberGenerator}/en.sahih`
+  const arabicURL = `${process.env.NEXT_PUBLIC_ALQURAN_API_ENDPOINT}/${randomNumberGenerator}`;
+  const englishURL = `${process.env.NEXT_PUBLIC_ALQURAN_API_ENDPOINT}/${randomNumberGenerator}/en.sahih`;
 
   const fetchAndGenerateVerse = () => {
     axios.all([axios.get(arabicURL), axios.get(englishURL)]).then(
@@ -18,22 +18,22 @@ const NewPicker = () => {
         (arabicURL, englishURL) => {
           setStoringSurahArabic(arabicURL.data.data.surah),
             setStoringAyahArabic(arabicURL.data.data),
-            setEnglishTranslation(englishURL.data.data)
+            setEnglishTranslation(englishURL.data.data);
         },
         [arabicURL, englishURL]
       )
-    )
-  }
+    );
+  };
 
   useEffect(() => {
     axios.all([axios.get(arabicURL), axios.get(englishURL)]).then(
       axios.spread((arabicURL, englishURL) => {
         setStoringSurahArabic(arabicURL.data.data.surah),
           setStoringAyahArabic(arabicURL.data.data),
-          setEnglishTranslation(englishURL.data.data)
+          setEnglishTranslation(englishURL.data.data);
       })
-    )
-  }, [])
+    );
+  }, []);
 
   return (
     <>
@@ -92,7 +92,7 @@ const NewPicker = () => {
         </Link>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default NewPicker
+export default NewPicker;

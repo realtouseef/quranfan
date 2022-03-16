@@ -1,6 +1,6 @@
 import Head from "next/head";
 import DuaList from "../components/dua/DuaList";
-import NewPicker from "../components/NewPicker";
+import RandomVersePicker from "../components/randomVersePicker";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="favicon.png" type="image/gif" sizes="32x32" />
       </Head>
       <DuaList />
-      <NewPicker />
+      <RandomVersePicker />
     </>
   );
 }

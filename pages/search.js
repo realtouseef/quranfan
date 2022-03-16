@@ -1,40 +1,40 @@
-import Head from "next/head"
-import { useState, useEffect } from "react"
+import Head from "next/head";
+import { useState, useEffect } from "react";
 
 const Search = () => {
-  const [searchedWord, setSearchedWord] = useState("")
-  const [userTyped, setUserTyped] = useState("")
-  const [results, setResults] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [helloCount, setHelloCount] = useState()
+  const [searchedWord, setSearchedWord] = useState("");
+  const [userTyped, setUserTyped] = useState("");
+  const [results, setResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [ayahsFound, setAyahsFound] = useState();
 
   function onSubmit(e) {
-    e.preventDefault()
-    setSearchedWord(userTyped)
+    e.preventDefault();
+    setSearchedWord(userTyped);
   }
 
   useEffect(() => {
     async function fetchData() {
       try {
-        setIsLoading(true)
+        setIsLoading(true);
         const response = await fetch(
           `https://api.alquran.cloud/v1/search/${searchedWord}/all/en`
-        )
-        const json = await response.json()
+        );
+        const json = await response.json();
         setResults(
           json.data.matches.map((item) => {
-            return item
+            return item;
           })
-        )
-        setHelloCount(json.data.count)
+        );
+        setAyahsFound(json.data.count);
       } catch (error) {
-        console.log("error", error)
+        console.log("error", error);
       }
     }
     if (searchedWord !== "") {
-      fetchData()
+      fetchData();
     }
-  }, [searchedWord])
+  }, [searchedWord]);
 
   return (
     <>
@@ -80,12 +80,12 @@ const Search = () => {
           </button>
         </form>
 
-        {searchedWord !== "" && helloCount > 0 ? (
+        {searchedWord !== "" && ayahsFound > 0 ? (
           <p
             className="ml-4 lg:ml-0 mt-6 text-skin-muted font-mulish"
-            key={helloCount}
+            key={ayahsFound}
           >
-            {helloCount} ayahs were found with the word{" "}
+            {ayahsFound} ayahs were found with the word{" "}
             <span className="font-black text-skin-base">{`"${searchedWord}"`}</span>
           </p>
         ) : isLoading === true && searchedWord !== "" ? (
@@ -109,11 +109,11 @@ const Search = () => {
                 </article>
               </section>
             </>
-          )
+          );
         })}
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;
