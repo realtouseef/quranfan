@@ -44,8 +44,8 @@ const DuaList = () => {
               </span>
             </h1>
             <p className="my-6 text-md md:text-lg font-lato font-semibold tracking-wide text-skin-muted">
-              Feeling Sad, Depressed, or Hopeless and don't know what to recite?
-              Don't worry, we have got you covered.
+              {`Feeling Sad, Depressed, or Hopeless and don't know what to
+              recite? Don't worry, we have got you covered.`}
             </p>
 
             {/* normal dropdown  */}
