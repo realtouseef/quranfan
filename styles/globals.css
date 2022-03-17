@@ -24,6 +24,12 @@
   }
 }
 
+@layer base {
+  .custom-arrow {
+    @apply before:absolute before:left-1/2 before:top-1/2 before:w-0 before:h-0 before:-translate-x-1/2 before:-translate-y-1/2 before:border-x-[.7em] before:border-x-transparent before:border-t-[.7em] before:border-t-[#ec4899];
+  }
+}
+
 * {
   box-sizing: border-box;
 }

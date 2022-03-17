@@ -1,6 +1,6 @@
 import Head from "next/head";
 import DuaList from "../components/dua/DuaList";
-import RandomVersePicker from "../components/randomVersePicker";
+import RandomVersePicker from "../components/RandomVersePicker";
 
 export default function Home() {
   return (

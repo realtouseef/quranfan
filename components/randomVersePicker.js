@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
 
-const NewPicker = () => {
+const RandomVersePicker = () => {
   const [storingSurahArabic, setStoringSurahArabic] = useState([""]);
   const [storingAyahArabic, setStoringAyahArabic] = useState([""]);
   const [storingEnglishTranslation, setEnglishTranslation] = useState([""]);
@@ -22,14 +22,27 @@ const NewPicker = () => {
     );
   };
 
+  /*
+   * for calling the api
+   * when the page loads
+   * if we don't use useEffect
+   * there's no data shown on the page
+   */
+
   useEffect(() => {
-    fetchAndGenerateVerse();
-  }, [arabicURL, englishURL]);
+    axios.all([axios.get(arabicURL), axios.get(englishURL)]).then(
+      axios.spread((arabicURL, englishURL) => {
+        setStoringSurahArabic(arabicURL.data.data.surah),
+          setStoringAyahArabic(arabicURL.data.data),
+          setEnglishTranslation(englishURL.data.data);
+      })
+    );
+  }, []);
 
   return (
     <>
       <section className="mx-6 mt-96 lg:mt-60 mb-40 md:mb-72 lg:max-w-4xl lg:mx-auto">
-        <div className="  px-6 py-12 font-uthmanic bg-skin-light-pink">
+        <div className="px-6 py-12 font-uthmanic bg-skin-light-pink">
           <div className="mb-12 text-center">
             <p className="text-3xl mb-4">{storingSurahArabic.name}</p>
             <p className="font-mulish text-xl text-skin-muted">
@@ -86,4 +99,4 @@ const NewPicker = () => {
   );
 };
 
-export default NewPicker;
+export default RandomVersePicker;

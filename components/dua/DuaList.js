@@ -14,7 +14,7 @@ const DuaList = () => {
 
   return (
     <>
-      <style jsx>
+      {/* <style jsx>
         {`
           .custom-arrow::before {
             content: "";
@@ -29,7 +29,7 @@ const DuaList = () => {
             border-top: 0.7em solid rgb(236 72 153);
           }
         `}
-      </style>
+      </style> */}
       <DuaLayout>
         <main className="lg:py-24 lg:pl-10 lg:pr-1 lg:flex lg:justify-between">
           {/* heading */}
@@ -38,8 +38,9 @@ const DuaList = () => {
               className="text-3xl lg:text-4xl text-skin-heading
             font-extrabold font-mulish"
             >
-              ease your life with the{" "}
+              ease your life with the
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
+                {" "}
                 quranic verses
               </span>
             </h1>

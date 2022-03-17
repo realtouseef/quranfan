@@ -97,8 +97,11 @@ const Search = () => {
         {results.map((item) => {
           return (
             <>
-              <section className="mx-4 lg:mx-0" key={item.number}>
-                <article className="my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl">
+              <section className="mx-4 lg:mx-0">
+                <article
+                  key={item.surah.number}
+                  className="my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl"
+                >
                   <p className="font-uthmanic text-3xl">{item.surah.name}</p>
                   <p className="my-2 font-mulish text-skin-base text-lg">
                     {item.text}
