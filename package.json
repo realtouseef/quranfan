@@ -1,5 +1,6 @@
 {
   "name": "quranfan",
+  "description": "Quranfan is a beautiful website and has a very different theme. The basic motto behind this platform is to give users a perfect dua that correlates with their current feelings. Upon selecting a specific mood, it automatically gives you a verse from the Quran or a prayer that helps you to cope with it.",
   "private": true,
   "scripts": {
     "dev": "next dev",
