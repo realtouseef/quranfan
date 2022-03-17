@@ -26,13 +26,7 @@ const NewPicker = () => {
   };
 
   useEffect(() => {
-    axios.all([axios.get(arabicURL), axios.get(englishURL)]).then(
-      axios.spread((arabicURL, englishURL) => {
-        setStoringSurahArabic(arabicURL.data.data.surah),
-          setStoringAyahArabic(arabicURL.data.data),
-          setEnglishTranslation(englishURL.data.data);
-      })
-    );
+    fetchAndGenerateVerse();
   }, []);
 
   return (

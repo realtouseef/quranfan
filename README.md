@@ -5,10 +5,10 @@ Feeling Sad, Depressed, or Hopeless and don't know what to recite? Don't worry, 
 
 # Features😍
 
-📌 Dua's based on emotions
-✨ Dua's available with Urdu and English translations
-💕 Randomly pick a verse from Al-Qur'an option
-📑 Search for a word from Al-Qur'an
+- Dua's based on emotions📌
+- Dua's available with Urdu and English translations✨
+- Randomly pick a verse from Al-Qur'an option💕
+- Search for a word from Al-Qur'an📑
 
 ## Technologies Used💪
 
