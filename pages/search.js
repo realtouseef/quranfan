@@ -18,7 +18,7 @@ const Search = () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://api.alquran.cloud/v1/search/${searchedWord}/all/en`
+          `${process.env.NEXT_PUBLIC_SEARCH_WORD_API}/${searchedWord}/all/en`
         );
         const json = await response.json();
         setResults(
@@ -57,12 +57,9 @@ const Search = () => {
           Search for a word
         </p>
         <p className="mx-4 lg:mx-0 mb-6 text-skin-secondary">
-          you can now search for any word in {"Qur'an"}. All this is brough to
-          you by our team of dedicated devs who aim to bring you the islamic{" "}
-          {"dua's"} and {"Qur'an"} closer to you,{" "}
-          <span className="text-skin-secondary underline">
-            {"Feesabi'lillah"}
-          </span>
+          you can now search for any word in {"Qur'an"}. Note: this feature
+          searches for a word from the translation and shows what it founds in
+          the translation.
         </p>
         <form className="mx-4 lg:mx-0" onSubmit={onSubmit}>
           <input
@@ -97,11 +94,8 @@ const Search = () => {
         {results.map((item) => {
           return (
             <>
-              <section className="mx-4 lg:mx-0">
-                <article
-                  key={item.surah.number}
-                  className="my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl"
-                >
+              <article className="mx-4 lg:mx-0 my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl">
+                <div>
                   <p className="font-uthmanic text-3xl">{item.surah.name}</p>
                   <p className="my-2 font-mulish text-skin-base text-lg">
                     {item.text}
@@ -109,8 +103,8 @@ const Search = () => {
                   <p className="text-skin-secondary text-lg">
                     {item.surah.number}:{item.numberInSurah}
                   </p>
-                </article>
-              </section>
+                </div>
+              </article>
             </>
           );
         })}

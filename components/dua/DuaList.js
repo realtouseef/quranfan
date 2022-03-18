@@ -14,22 +14,6 @@ const DuaList = () => {
 
   return (
     <>
-      {/* <style jsx>
-        {`
-          .custom-arrow::before {
-            content: "";
-            position: absolute;
-            widhth: 0;
-            height: 0;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-left: 0.7em solid transparent;
-            border-right: 0.7em solid transparent;
-            border-top: 0.7em solid rgb(236 72 153);
-          }
-        `}
-      </style> */}
       <DuaLayout>
         <main className="lg:py-24 lg:pl-10 lg:pr-1 lg:flex lg:justify-between">
           {/* heading */}
