@@ -93,19 +93,20 @@ const Search = () => {
 
         {results.map((item) => {
           return (
-            <>
-              <article className="mx-4 lg:mx-0 my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl">
-                <div>
-                  <p className="font-uthmanic text-3xl">{item.surah.name}</p>
-                  <p className="my-2 font-mulish text-skin-base text-lg">
-                    {item.text}
-                  </p>
-                  <p className="text-skin-secondary text-lg">
-                    {item.surah.number}:{item.numberInSurah}
-                  </p>
-                </div>
-              </article>
-            </>
+            <ul
+              key={itemKeys}
+              className="mx-4 lg:mx-0 my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl"
+            >
+              <li>
+                <p className="font-uthmanic text-3xl">{item.surah.name}</p>
+                <p className="my-2 font-mulish text-skin-base text-lg">
+                  {item.text}
+                </p>
+                <p className="text-skin-secondary text-lg">
+                  {item.surah.number}:{item.numberInSurah}
+                </p>
+              </li>
+            </ul>
           );
         })}
       </section>
