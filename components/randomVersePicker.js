@@ -90,9 +90,13 @@ const RandomVersePicker = () => {
           for it?
         </p>
         <Link href="/search" passHref>
-          <button className="mt-14 font-mulish tracking-wide bg-skin-pink-secondary text-skin-base px-6 py-5 text-md md:text-xl rounded-lg hover:shadow-xl font-black">
+          <button className="mt-14 px-4 py-2 main-btn">
             explore more <span className="font-normal">🔥</span>
           </button>
+        </Link>
+        <span className="uppercase mx-2">or</span>
+        <Link href="/kalma">
+          <a className="main-btn px-4 py-2">See Duas after Namaz/prayer</a>
         </Link>
       </section>
     </>
