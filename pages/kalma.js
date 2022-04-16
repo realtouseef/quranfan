@@ -18,7 +18,7 @@ const kalima = () => {
               return (
                 <div
                   key={id}
-                  className="bg-skin-light-pink  py-5 px-8 text-right space-y-5 rounded-md"
+                  className="bg-skin-light-pink  py-5 px-8 text-right space-y-5 rounded-md h-max"
                 >
                   <p className="font-uthmanic text-2xl md:text-3xl">{arabic}</p>
                   <p className="text-lg md:text-xl">{urdu}</p>
