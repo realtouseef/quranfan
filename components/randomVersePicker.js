@@ -95,7 +95,7 @@ const RandomVersePicker = () => {
           </button>
         </Link>
         <span className="uppercase mx-2">or</span>
-        <Link href="/kalma">
+        <Link href="/verses">
           <a className="main-btn px-4 py-2">See Duas after Namaz/prayer</a>
         </Link>
       </section>

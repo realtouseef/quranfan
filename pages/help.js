@@ -1,4 +1,4 @@
-import Head from "next/head"
+import Head from "next/head";
 
 const donation = () => {
   return (
@@ -46,6 +46,9 @@ const donation = () => {
             <p>
               <span className="text-skin-muted">Easypaisa: </span>+923445862108
             </p>
+            <p>
+              <span className="text-skin-muted">NayaPay: </span> 0311-9996341
+            </p>
           </article>
           <article>
             <p className="text-center text-skin-secondary">Through Bank</p>
@@ -64,7 +67,7 @@ const donation = () => {
         </section>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default donation
+export default donation;

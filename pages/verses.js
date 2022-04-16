@@ -1,20 +1,26 @@
 import Head from "next/head";
-import { KalmaData } from "../lib/KalmaData";
+import { VersesData } from "../lib/versesData";
 
-const kalima = () => {
+const Verses = () => {
   return (
     <>
       <Head>
-        <title>Duas after Namaz/Prayer | quranfan</title>
+        <title>Daily-life Duas | quranfan</title>
         <meta
           name="description"
-          content="Duas that can be made after Namaz/prayer."
+          content="Daily-life Duas that can be used to improve your daily life"
         />
       </Head>
       <main className="px-5 my-10">
+        <h1 className="mb-10 space-y-2 border-b-2">
+          <span className="font-bold text-3xl ">Daily-life Duas</span>
+          <p className="text-lg">
+            All of these Duas/verses are taken from either Hadith or Quran.
+          </p>
+        </h1>
         <article className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {KalmaData &&
-            KalmaData.map(({ id, arabic, urdu, english }) => {
+          {VersesData &&
+            VersesData.map(({ id, arabic, urdu, english }) => {
               return (
                 <div
                   key={id}
@@ -32,4 +38,4 @@ const kalima = () => {
   );
 };
 
-export default kalima;
+export default Verses;

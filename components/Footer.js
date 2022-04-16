@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 const footer = () => {
   return (
@@ -9,12 +9,12 @@ const footer = () => {
             <Link href="/about">About quranfan</Link>
           </section>
           <p className="text-sm md:text-lg font-semibold text-skin-secondary tracking-wider select-none">
-            All Rights Reserved © 2022 quranfan Labs Inc.
+            All Rights Reserved © {new Date().getFullYear()} quranfan Labs Inc.
           </p>
         </div>
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default footer
+export default footer;
