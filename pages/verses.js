@@ -18,15 +18,18 @@ const Verses = () => {
             All of these Duas/verses are taken from either Hadith or Quran.
           </p>
         </h1>
-        <article className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <article className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
           {VersesData &&
-            VersesData.map(({ id, arabic, urdu, english }) => {
+            VersesData.map(({ id, title, arabic, urdu, english }) => {
               return (
                 <div
                   key={id}
-                  className="bg-skin-light-pink  py-5 px-8 text-right space-y-5 rounded-md h-max"
+                  className="bg-skin-light-pink  py-5 px-8 text-right space-y-8 rounded-md h-max"
                 >
-                  <p className="font-uthmanic text-2xl md:text-3xl">{arabic}</p>
+                  <p className="text-center font-semibold text-lg">{title}</p>
+                  <p className="font-uthmanic text-2xl md:text-3xl leading-[2.5]">
+                    {arabic}
+                  </p>
                   <p className="text-lg md:text-xl">{urdu}</p>
                   <p className="text-left">{english}</p>
                 </div>
