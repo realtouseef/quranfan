@@ -94,7 +94,7 @@ const Search = () => {
         {results.map((item) => {
           return (
             <ul
-              key={itemKeys}
+              key={item.keys}
               className="mx-4 lg:mx-0 my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl"
             >
               <li>
