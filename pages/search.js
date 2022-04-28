@@ -8,7 +8,7 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [ayahsFound, setAyahsFound] = useState();
 
-  // unique number
+  // unique number to use as a "key" for each ayah
   let uniqueNumber = new Date().valueOf();
 
   function onSubmit(e) {
@@ -21,7 +21,13 @@ const Search = () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_SEARCH_WORD_API}/${searchedWord}/all/en`
+          `${process.env.NEXT_PUBLIC_SEARCH_WORD_API}/${searchedWord}/all/en`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }
         );
         const json = await response.json();
         setResults(
