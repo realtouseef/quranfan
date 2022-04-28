@@ -8,6 +8,9 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [ayahsFound, setAyahsFound] = useState();
 
+  // unique number
+  let uniqueNumber = new Date().valueOf();
+
   function onSubmit(e) {
     e.preventDefault();
     setSearchedWord(userTyped);
@@ -91,16 +94,19 @@ const Search = () => {
           ""
         )}
 
-        {results.map((item) => {
+        {results.map(({ surah, text, numberInSurah }) => {
           return (
-            <ul className="mx-4 lg:mx-0 my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl">
+            <ul
+              key={uniqueNumber++}
+              className="mx-4 lg:mx-0 my-10 px-6 py-4 bg-skin-light-pink text-skin-base cursor-pointer duration-200 ease-linear rounded-lg shadow-md hover:shadow-xl"
+            >
               <li>
-                <p className="font-uthmanic text-3xl">{item.surah.name}</p>
+                <p className="font-uthmanic text-3xl">{surah.name}</p>
                 <p className="my-2 font-mulish text-skin-base text-lg">
-                  {item.text}
+                  {text}
                 </p>
                 <p className="text-skin-secondary text-lg">
-                  {item.surah.number}:{item.numberInSurah}
+                  {surah.number}:{numberInSurah}
                 </p>
               </li>
             </ul>
