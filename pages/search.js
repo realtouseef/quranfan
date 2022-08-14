@@ -23,7 +23,6 @@ const Search = () => {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_SEARCH_WORD_API}/${searchedWord}/all/en`
         );
-        console.log("response", response);
         const json = await response.json();
         setResults(
           json.data.matches.map((item) => {
