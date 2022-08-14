@@ -10,6 +10,13 @@ Feeling Sad, Depressed, or Hopeless and don't know what to recite? Don't worry, 
 - Randomly pick a verse from Al-Qur'an option💕
 - Search for a word from Al-Qur'an📑
 
+# Get Started
+
+```
+NEXT_PUBLIC_SEARCH_WORD_API="http://api.alquran.cloud/v1/search"
+NEXT_PUBLIC_ALQURAN_API_ENDPOINT="http://api.alquran.cloud/v1/ayah"
+```
+
 ## Technologies Used💪
 
 - [NextJS](https://nextjs.org)

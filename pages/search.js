@@ -21,14 +21,9 @@ const Search = () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_SEARCH_WORD_API}/${searchedWord}/all/en`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-          }
+          `${process.env.NEXT_PUBLIC_SEARCH_WORD_API}/${searchedWord}/all/en`
         );
+        console.log("response", response);
         const json = await response.json();
         setResults(
           json.data.matches.map((item) => {
@@ -67,7 +62,7 @@ const Search = () => {
         </p>
         <p className="mx-4 lg:mx-0 mb-6 text-skin-secondary">
           you can now search for any word in {"Qur'an"}. Note: this feature
-          searches for a word from the translation and shows what it founds in
+          searches for a word from the translation and shows what is found in
           the translation.
         </p>
         <form className="mx-4 lg:mx-0" onSubmit={onSubmit}>
